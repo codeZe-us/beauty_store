@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:helpmee/core/constant/color.dart';
+import 'package:beauty_store/core/constant/color.dart';
 
 class CustomTextField extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
