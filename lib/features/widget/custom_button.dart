@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:helpmee/core/constant/color.dart';
-import 'package:helpmee/core/constant/dimensions.dart';
+import 'package:beauty_store/core/constant/color.dart';
+import 'package:beauty_store/core/constant/dimensions.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String? buttonTitle;
