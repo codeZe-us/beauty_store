@@ -11,4 +11,10 @@ class AppColors {
   static const Color blue = Color(0xFF0078FF);
   static const Color yellow = Color(0xFFFFAE0E);
   static Color white05 = Colors.white.withOpacity(0.5);
+  static const Color blueshade200 = Color(0xFF90CAF9);
+  static const Color blueshade400 = Color(0xFF1E88E5);
+  static const Color blackshade200 = Color(0xFF303030);
+  static const Color gryshade50 = Color(0xFFECEFF1);
+  static const Color greyshade300 = Color(0xFFB0BEC5);
+  static const Color greyshade200 = Color(0xFFB0BEC5);
 }
