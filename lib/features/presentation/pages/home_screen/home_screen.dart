@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/constant/color.dart';
 import '../../../../core/constant/dimensions.dart';
 import 'home_screen_widgets/home_screen_app_bar.dart';
+import 'home_screen_widgets/promotion_banner.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-     SizeConfig.init(context);
+    SizeConfig.init(context);
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
       body: SafeArea(
@@ -24,8 +25,9 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             const HomeScreenAppBar(),
             SizedBox(height: getProportionateScreenHeight(20)),
-            const AllCategoriesHome()
-
+            const AllCategoriesHome(),
+            SizedBox(height: getProportionateScreenHeight(20)),
+            const Promotions()
           ],
         ),
       ),
