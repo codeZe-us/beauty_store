@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import '../../../../core/constant/color.dart';
 import '../../../../core/constant/dimensions.dart';
 import 'home_screen_widgets/home_screen_app_bar.dart';
+import 'home_screen_widgets/new_arrivals.dart';
+import 'home_screen_widgets/popular_product.dart';
 import 'home_screen_widgets/promotion_banner.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,15 +22,20 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const HomeScreenAppBar(),
-            SizedBox(height: getProportionateScreenHeight(20)),
-            const AllCategoriesHome(),
-            SizedBox(height: getProportionateScreenHeight(20)),
-            const Promotions()
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const HomeScreenAppBar(),
+              const AllCategoriesHome(),
+              SizedBox(height: getProportionateScreenHeight(20)),
+              const Promotions(),
+              SizedBox(height: getProportionateScreenHeight(20)),
+              const HomePopularProduct(),
+              SizedBox(height: getProportionateScreenHeight(20)),
+              const HomeNewArrivals()
+            ],
+          ),
         ),
       ),
     );
