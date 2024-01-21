@@ -10,8 +10,9 @@ class HomeScreenAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-          EdgeInsets.only(left: getProportionateScreenWidth(15), right: getProportionateScreenWidth(23)),
+      padding: EdgeInsets.only(
+          left: getProportionateScreenWidth(15),
+          right: getProportionateScreenWidth(23)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -25,7 +26,6 @@ class HomeScreenAppBar extends StatelessWidget {
           ),
           const Icon(Icons.notifications_none,
               color: AppColors.blackshade200, size: 30),
-
         ],
       ),
     );
