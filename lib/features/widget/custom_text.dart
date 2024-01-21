@@ -4,26 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/constant/dimensions.dart';
 
-// Text customGeneralTextNunitoSans({
-//   required String inputText,
-//   required double fontSize,
-//   required FontWeight weight,
-//   required Color colorName,
-// }) {
-//    AnimatedTextKit(
-//     animatedTexts: [
-//       TyperAnimatedText(
-//         speed: Duration(milliseconds: 150),
-
-//               inputText,
-//       textStyle: GoogleFonts.nunitoSans(fontSize: getProportionateScreenWidth(fontSize), fontWeight: weight, color: colorName),
-//       )
-//     ],
-//     isRepeatingAnimation: true,
-//     repeatForever: true,
-
-//   );
-// }
 
 Widget customGeneralTextNunitoSans({
   required String inputText,
