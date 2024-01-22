@@ -18,12 +18,14 @@ class _ProductDetailsState extends State<ProductDetails> {
     SizeConfig.init(context);
     return const Scaffold(
       backgroundColor: AppColors.primaryColor,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ProductDetailsAppBar(),
-          Description(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ProductDetailsAppBar(),
+            Description(),
+          ],
+        ),
       ),
     );
   }

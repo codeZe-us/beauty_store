@@ -3,7 +3,7 @@ class Assets {
 
   // SVGS
   static const String pathSvg = 'assets/images/svgs';
-  static const String pathImg = 'assets/images/png';
+  static const String pathImg = 'assets/images';
   static const String splashSvg = '$pathSvg/splashLogo2.svg';
   static const String helloSvg = '$pathSvg/waving-hand.svg';
   static const String svg = '$pathSvg/waving-hand.svg';
@@ -11,5 +11,5 @@ class Assets {
 
 
   // IMAGES
-  static const String logoImage = '$pathImg/logo.png';
+  static const String favour= '$pathImg/favour.jpg';
 }

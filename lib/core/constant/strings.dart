@@ -32,6 +32,15 @@ class StaticText {
   static const String describe = "A skincare product is a cosmetic or therapeutic formulation designed to address specific concerns related to the care and maintenance of the skin. These products are created to enhance the health and appearance of the skin by providing various benefits such as hydration, nourishment, protection, and targeted treatment for specific skin issues. Skincare products come in various forms, including creams, lotions, serums, cleansers, toners, masks, and more.";
   static const String cart = 'Add to cart';
   static const String buy = 'Buy now';
+  static const String myProfile = 'My Profile';
+  static const String name = 'Lewechi Godsfavour';
+  static const String username = '@codeZeus';
+  static const String editProfile = 'Edit Profile';
+  static const String settings = 'Settings';
+  static const String orderH = 'Order History';
+  static const String skinType = 'Skin Type Quiz';
+  static const String lang = 'Language';
+  static const String logOut = 'Log Out';
 }
 
 class ErrorText {

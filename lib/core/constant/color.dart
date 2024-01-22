@@ -18,6 +18,8 @@ class AppColors {
   static const Color gryshade50 = Color(0xFFECEFF1);
   static const Color greyshade300 = Color(0xFFB0BEC5);
   static const Color greyshade200 = Color(0xFFB0BEC5);
+  static const Color greyshade50 = Color(0xffe0e0e0);
+  static const Color greyshade100 = Color(0x0ff5f5f5);
   static const LinearGradient grade = LinearGradient(
     begin: Alignment(0.99, -0.15),
     end: Alignment(-0.99, 0.15),
