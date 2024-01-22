@@ -28,8 +28,6 @@ class _PaymentAppBarState extends State<PaymentAppBar> {
               fontSize: 20,
               weight: FontWeight.w800,
               colorName: AppColors.blackColor),
-
-              
         ],
       ),
     );
