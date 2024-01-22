@@ -21,6 +21,8 @@ class StaticText {
   static const String popItem = 'Popular Item';
   static const String bestDeal = 'Best deals';
   static const String selectSize = 'Select size';
+    static const String placeorder = 'Place Orde';
+    static const String fact = "it's a long establish fact that";
   static const String gm = 'GM';
   static const String first = '100';
   static const String second = '200';
@@ -48,6 +50,7 @@ class StaticText {
   static const String payPal = 'PayPal';
   static const String cashOnD = 'Cash On delivery';
   static const String addCard = 'Add New Card';
+    static const String addCart = 'Add to Cart';
   static const String subtotal = 'Subtotal';
     static const String dis = 'Discount';
   static const String deliveryC = 'Delivery Charge';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'features/presentation/pages/product_details__screen/product_details.dart';
+import 'features/presentation/pages/cart_screen/cart_scree.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const ProductDetails(),
+      home: const CartScreen(),
     );
   }
 }
