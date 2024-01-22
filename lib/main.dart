@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'features/presentation/pages/cart_screen/cart_scree.dart';
+import 'features/presentation/pages/bottom_nav/bottom_nav.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const CartScreen(),
+      home: const MyHomePage(),
     );
   }
 }
