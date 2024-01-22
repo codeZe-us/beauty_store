@@ -17,6 +17,9 @@ class StaticText {
   static const String news = "on all orders above 150";
   static const String todaybuy = 'WHAT TO\nBUY TODAY';
   static const String shop = 'shop up to 50% off';
+  static const String allItem = 'All Item';
+  static const String popItem = 'Popular Item';
+  static const String bestDeal = 'Best deals';
 }
 
 class ErrorText {

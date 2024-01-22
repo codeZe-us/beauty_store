@@ -2,7 +2,7 @@ import 'package:beauty_store/core/constant/color.dart';
 import 'package:beauty_store/core/constant/dimensions.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../widget/home_search_bar.dart';
+import '../../../../widget/custom_search_bar.dart';
 
 class HomeScreenAppBar extends StatelessWidget {
   const HomeScreenAppBar({super.key});
@@ -21,7 +21,10 @@ class HomeScreenAppBar extends StatelessWidget {
             children: [
               const Icon(Icons.menu, color: AppColors.blackshade200, size: 30),
               SizedBox(width: getProportionateScreenWidth(20)),
-              const HomeSearchBar(),
+              CustomSearchBar(
+                width: getProportionateScreenWidth(240),
+                height: getProportionateScreenHeight(43),
+              )
             ],
           ),
           const Icon(Icons.notifications_none,
