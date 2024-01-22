@@ -41,6 +41,28 @@ class StaticText {
   static const String skinType = 'Skin Type Quiz';
   static const String lang = 'Language';
   static const String logOut = 'Log Out';
+  static const String paymentmethod = 'Payment Method';
+  static const String googlePay = 'Google Pay';
+  static const String applePay = 'Apple Pay';
+  static const String masterCard = 'MasterCard';
+  static const String payPal = 'PayPal';
+  static const String cashOnD = 'Cash On delivery';
+  static const String addCard = 'Add New Card';
+  static const String subtotal = 'Subtotal';
+    static const String dis = 'Discount';
+  static const String deliveryC = 'Delivery Charge';
+  static const String totalTax = 'Total(inc tax)';
+  static const String totalAm = 'Total Amount';
+  static const String confirmPay = 'Confirm Payment';
+  static const String firstnum = '\$100';
+  static const String secondNum = '\$10';
+  static const String thirdNum = '\$0';
+  static const String fourthnum = '\$110';
+    static const String fifthnum = '\$450';
+  
+
+  
+
 }
 
 class ErrorText {

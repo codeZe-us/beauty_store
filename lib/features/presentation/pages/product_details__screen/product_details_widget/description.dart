@@ -4,6 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../../../core/constant/color.dart';
 import '../../../../../core/constant/strings.dart';
+import '../../../../widget/custom_button.dart';
 import '../../../../widget/custom_text.dart';
 
 class Description extends StatefulWidget {
@@ -201,34 +202,52 @@ class _DescriptionState extends State<Description> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                height: getProportionateScreenHeight(32),
-                width: getProportionateScreenHeight(150),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: AppColors.blueshade400),
-                child: Center(
-                  child: customTextNunitoSansCenter(
-                      inputText: StaticText.cart,
-                      fontSize: 13,
-                      weight: FontWeight.w700,
-                      colorName: AppColors.primaryColor),
-                ),
-              ),
-              Container(
-                height: getProportionateScreenHeight(32),
-                width: getProportionateScreenHeight(150),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: AppColors.blueshade200),
-                child: Center(
-                  child: customTextNunitoSansCenter(
-                      inputText: StaticText.buy,
-                      fontSize: 13,
-                      weight: FontWeight.w700,
-                      colorName: AppColors.blackColor),
-                ),
-              ),
+              // Container(
+              //   height: getProportionateScreenHeight(32),
+              //   width: getProportionateScreenHeight(150),
+              //   decoration: BoxDecoration(
+              //       borderRadius: BorderRadius.circular(5),
+              //       color: AppColors.blueshade400),
+              //   child: Center(
+              //     child: customTextNunitoSansCenter(
+              //         inputText: StaticText.cart,
+              //         fontSize: 13,
+              //         weight: FontWeight.w700,
+              //         colorName: AppColors.primaryColor),
+              //   ),
+              // ),
+              PrimaryButton(
+              buttonTitle: StaticText.cart,
+              enableButton: true,
+              buttonColor: AppColors.blueshade400,
+              splashColor: AppColors.greyColor,
+              buttonHeight: getProportionateScreenHeight(32),
+              butttonWidth: getProportionateScreenWidth(150),
+              onPressed: () {},
+            ),
+              // Container(
+              //   height: getProportionateScreenHeight(32),
+              //   width: getProportionateScreenHeight(150),
+              //   decoration: BoxDecoration(
+              //       borderRadius: BorderRadius.circular(5),
+              //       color: AppColors.blueshade200),
+              //   child: Center(
+              //     child: customTextNunitoSansCenter(
+              //         inputText: StaticText.buy,
+              //         fontSize: 13,
+              //         weight: FontWeight.w700,
+              //         colorName: AppColors.blackColor),
+              //   ),
+              // ),
+                 PrimaryButton(
+              buttonTitle: StaticText.buy,
+              enableButton: true,
+              buttonColor: AppColors.blueshade200,
+              splashColor: AppColors.greyColor,
+              buttonHeight: getProportionateScreenHeight(32),
+              butttonWidth: getProportionateScreenWidth(150),
+              onPressed: () {},
+            ),
             ],
           )
         ],
