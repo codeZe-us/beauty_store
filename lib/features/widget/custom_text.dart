@@ -1,33 +1,8 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/constant/dimensions.dart';
-
-
-Widget customGeneralTextNunitoSans({
-  required String inputText,
-  required double fontSize,
-  required FontWeight weight,
-  required Color colorName,
-}) {
-  return AnimatedTextKit(
-    key: UniqueKey(),
-    animatedTexts: [
-      TyperAnimatedText(
-        inputText,
-        textStyle: GoogleFonts.nunitoSans(
-          fontSize: fontSize,
-          fontWeight: weight,
-          color: colorName,
-        ),
-        speed: const Duration(milliseconds: 65),
-      ),
-    ],
-    isRepeatingAnimation: true,
-    repeatForever: true,
-  );
-}
 
 Text customGeneralTextNunitoSansCenter({
   required String inputText,
