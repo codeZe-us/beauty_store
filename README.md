@@ -1,2 +1,2 @@
 # beauty_store
- An ecommerce body wear application
+ An ecommerce application leaveraging fakestore API
