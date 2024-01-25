@@ -16,13 +16,17 @@ class PopularItems extends StatefulWidget {
 class _PopularItemsState extends State<PopularItems> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(height: getProportionateScreenHeight(30)),
-        SingleChildScrollView(
-          child: SizedBox(
-            height: SizeConfig.screenHeight,
+    return Container();
+
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(height: getProportionateScreenHeight(30)),
+          SizedBox(
+            height: 200,
             child: GridView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: getProportionateScreenWidth(13),
@@ -80,8 +84,8 @@ class _PopularItemsState extends State<PopularItems> {
               },
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

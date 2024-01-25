@@ -13,6 +13,8 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
+
+
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
@@ -23,7 +25,9 @@ class _ProductDetailsState extends State<ProductDetails> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ProductDetailsAppBar(),
-            Description(),
+            Description(productName: '', productImage: '', amount: 10,
+
+            ),
           ],
         ),
       ),

@@ -16,6 +16,8 @@ class BestDeals extends StatefulWidget {
 class _BestDealsState extends State<BestDeals> {
   @override
   Widget build(BuildContext context) {
+    return Container();
+
     return Column(
       children: [
         SizedBox(height: getProportionateScreenHeight(30)),
@@ -23,6 +25,7 @@ class _BestDealsState extends State<BestDeals> {
           child: SizedBox(
             height: SizeConfig.screenHeight,
             child: GridView.builder(
+              shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: getProportionateScreenWidth(13),

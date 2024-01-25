@@ -24,7 +24,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
           children: [
             const CategoryAppBar(),
             SizedBox(height: getProportionateScreenHeight(20)),
-            const CategoryList()
+            SizedBox(height: 500, child: const CategoryList())
           ],
         ),
       ),

@@ -1,21 +1,62 @@
-import 'package:beauty_store/domain/entities/product.dart';
+class ProductModel {
+  int? id;
+  String? title;
+  num? price;
+  String? description;
+  String? category;
+  late String image;
+  Rating? rating;
 
-class ProductModel extends Product {
-  const ProductModel({
-    required super.id,
-    required super.title,
-    required super.price,
-    required super.description,
-    required super.category,
-    required super.image,
-  });
+  ProductModel(
+      {this.id,
+      this.title,
+      this.price,
+      this.description,
+      this.category,
+      required this.image,
+      this.rating});
 
-  factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
-        id: json['id'],
-        title: json['title'],
-        price: json['price'].toDouble(),
-        description: json['description'],
-        category: json['category'],
-        image: json['image'],
-      );
+  ProductModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    title = json['title'];
+    price = json['price'];
+    description = json['description'];
+    category = json['category'];
+    image = json['image'];
+    rating =
+        json['rating'] != null ? Rating.fromJson(json['rating']) : null;
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['title'] = title;
+    data['price'] = price;
+    data['description'] = description;
+    data['category'] = category;
+    data['image'] = image;
+    if (rating != null) {
+      data['rating'] = rating!.toJson();
+    }
+    return data;
+  }
+}
+
+class Rating {
+  num? rate;
+  int? count;
+
+  Rating({this.rate, this.count});
+
+  Rating.fromJson(Map<String, dynamic> json) {
+    rate = json['rate'];
+    count = json['count'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['rate'] = rate;
+    data['count'] = count;
+    return data;
+  }
 }
