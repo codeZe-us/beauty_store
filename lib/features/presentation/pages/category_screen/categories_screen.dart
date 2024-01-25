@@ -16,15 +16,15 @@ class _CategoryScreenState extends State<CategoryScreen> {
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: AppColors.primaryColor,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const CategoryAppBar(),
-            SizedBox(height: getProportionateScreenHeight(20)),
-            SizedBox(height: 500, child: const CategoryList())
+            CategoryAppBar(),
+          
+             Expanded(child: CategoryList())
           ],
         ),
       ),

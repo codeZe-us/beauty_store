@@ -6,7 +6,16 @@ import 'package:flutter/material.dart';
 import '../../../../core/constant/dimensions.dart';
 
 class ProductDetails extends StatefulWidget {
-  const ProductDetails({super.key});
+  final String? productName;
+  final String? productImage;
+   final int amount;
+const ProductDetails({
+    Key? key,
+    required this.productName,
+    required this.productImage,
+    required this.amount,
+
+  }) : super(key: key);
 
   @override
   State<ProductDetails> createState() => _ProductDetailsState();
@@ -25,7 +34,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ProductDetailsAppBar(),
-            Description(productName: '', productImage: '', amount: 10,
+            Description(
 
             ),
           ],

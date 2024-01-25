@@ -3,7 +3,12 @@ import 'package:beauty_store/core/constant/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsAppBar extends StatelessWidget {
-  const ProductDetailsAppBar({super.key});
+
+  const ProductDetailsAppBar({
+    Key? key,
+  
+
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +26,22 @@ class ProductDetailsAppBar extends StatelessWidget {
           SizedBox(height: getProportionateScreenWidth(50)),
           Padding(
             padding: EdgeInsets.only(left: getProportionateScreenWidth(25)),
-            child: const Icon(Icons.arrow_back_ios,
-                color: AppColors.blueshade400, size: 20),
+            child: GestureDetector
+            (
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: const Icon(Icons.arrow_back_ios,
+                  color: AppColors.blueshade400, size: 20),
+            ),
+              
           ),
+          // Center(
+          //   child: Image.network(productImage!)
+          // )
         ],
       ),
+      
     );
   }
 }
