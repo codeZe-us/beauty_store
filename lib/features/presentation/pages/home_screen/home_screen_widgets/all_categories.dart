@@ -1,7 +1,9 @@
 import 'package:beauty_store/data/models/category_model.dart';
+import 'package:beauty_store/features/presentation/pages/category_screen/categories_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/constant/assets_location.dart';
 import '../../../../../core/constant/color.dart';
 import '../../../../../core/constant/dimensions.dart';
 import '../../../../../core/constant/strings.dart';
@@ -41,11 +43,23 @@ class AllCategoriesHome extends StatelessWidget {
                       weight: FontWeight.w700,
                       colorName: AppColors.blackColor,
                     ),
-                    customTextNunitoSansCenter(
-                      inputText: StaticText.seeAll,
-                      fontSize: 15,
-                      weight: FontWeight.w700,
-                      colorName: AppColors.blueshade400,
+                    GestureDetector(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const CategoryScreen()),
+                          );
+                        },
+                        splashColor: AppColors.greyColor,
+                        child: customTextNunitoSansCenter(
+                          inputText: StaticText.seeAll,
+                          fontSize: 15,
+                          weight: FontWeight.w700,
+                          colorName: AppColors.blueshade400,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -76,6 +90,7 @@ class AllCategoriesHome extends StatelessWidget {
                                   Radius.circular(13),
                                 ),
                               ),
+                              child: Image.asset(Assets.imageUrls[index]),
                             ),
                             SizedBox(height: getProportionateScreenHeight(10)),
                             customTextNunitoSansCenter(

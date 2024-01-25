@@ -16,11 +16,11 @@ class _CategoryListState extends State<CategoryList> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3, // Number of tabs
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('TabView Example'),
-          bottom: TabBar(
+          automaticallyImplyLeading: false,
+          bottom: const TabBar(
             dividerColor: Colors.transparent,
             indicator: BoxDecoration(color: Colors.transparent),
             indicatorWeight: 1,
@@ -41,84 +41,4 @@ class _CategoryListState extends State<CategoryList> {
       ),
     );
   }
-// return Padding(
-//   padding:
-//       EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(30)),
-//   child: Column(
-//     children: [
-//       Row(
-//         children: [
-//           GestureDetector(
-//             child: InkWell(
-//               splashColor: AppColors.greyColor,
-//               onTap: () {
-//                 setState(() {
-//                   selectedIndex = 0;
-//                 });
-//               },
-//               child: customTextNunitoSansCenter(
-//                 inputText: StaticText.allItem,
-//                 fontSize: 15,
-//                 weight: FontWeight.w700,
-//                 colorName: (selectedIndex == 0)
-//                     ? AppColors.blueshade400
-//                     : AppColors.blackColor,
-//               ),
-//             ),
-//           ),
-//           SizedBox(width: getProportionateScreenWidth(44)),
-//           GestureDetector(
-//             child: InkWell(
-//               splashColor: AppColors.greyColor,
-//               onTap: () {
-//                 setState(() {
-//                   selectedIndex = 1;
-//                 });
-//               },
-//               child: customTextNunitoSansCenter(
-//                 inputText: StaticText.popItem,
-//                 fontSize: 15,
-//                 weight: FontWeight.w700,
-//                 colorName: (selectedIndex == 1)
-//                     ? AppColors.blueshade400
-//                     : AppColors.blackColor,
-//               ),
-//             ),
-//           ),
-//           SizedBox(width: getProportionateScreenWidth(44)),
-//           GestureDetector(
-//             child: InkWell(
-//               splashColor: AppColors.greyColor,
-//               onTap: () {
-//                 setState(() {
-//                   selectedIndex = 2;
-//                 });
-//               },
-//               child: customTextNunitoSansCenter(
-//                 inputText: StaticText.bestDeal,
-//                 fontSize: 15,
-//                 weight: FontWeight.w700,
-//                 colorName: (selectedIndex == 2)
-//                     ? AppColors.blueshade400
-//                     : AppColors.blackColor,
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//       SizedBox(
-//         height: getProportionateScreenHeight(20),
-//         child: IndexedStack(
-//           index: selectedIndex,
-//           children: const [
-//             AllItems(),
-//             PopularItems(),
-//             BestDeals(),
-//           ],
-//         ),
-//       ),
-//     ],
-//   ),
-// );
-// }
 }

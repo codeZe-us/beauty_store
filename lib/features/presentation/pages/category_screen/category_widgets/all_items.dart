@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../../../core/constant/color.dart';
 import '../../../../../core/constant/dimensions.dart';
-import '../../../../../core/constant/strings.dart';
+import '../../../../../data/models/product_model.dart';
 import '../../../../widget/custom_text.dart';
+import '../../../logic/product_bloc/product_bloc.dart';
+import '../../../logic/product_bloc/product_event.dart';
+import '../../../logic/product_bloc/product_state.dart';
 
 class AllItems extends StatefulWidget {
   const AllItems({super.key});
@@ -14,25 +18,39 @@ class AllItems extends StatefulWidget {
 }
 
 class _AllItemsState extends State<AllItems> {
+  String truncateText(String text, int maxLength) {
+      return text.length <= maxLength
+          ? text
+          : '${text.substring(0, maxLength)}...';
+    }
+
   @override
   Widget build(BuildContext context) {
+     final allProviderBloc = BlocProvider.of<AllProductBloc>(context);
+
+    allProviderBloc.add(GetAllProductEvent());
+      return BlocBuilder<AllProductBloc, AllProductState>(
+        builder: (context, state) {
+      if (state is GetAllProductState) {
+        List<ProductModel>? products = state.productList;
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: getProportionateScreenHeight(30)),
+          SizedBox(height: getProportionateScreenHeight(5)),
           Container(
-            margin: EdgeInsets.only(left: 20),
+            margin: const EdgeInsets.only(left: 20),
             height: SizeConfig.screenHeight,
             child: GridView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: getProportionateScreenWidth(13),
-                mainAxisSpacing: getProportionateScreenHeight(9),
+                crossAxisSpacing: getProportionateScreenWidth(10),
+           
               ),
-              itemCount: 20,
+              itemCount: products?.length ?? 0,
               itemBuilder: (context, index) {
+                  ProductModel product = products![index];
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -43,12 +61,15 @@ class _AllItemsState extends State<AllItems> {
                         color: AppColors.blueshade200,
                         borderRadius: BorderRadius.all(Radius.circular(13)),
                       ),
+                        child: Center(
+                                child: Image.network(product.image),
+                              ),
                     ),
                     SizedBox(height: getProportionateScreenHeight(7)),
                     Row(
                       children: [
                         customTextNunitoSansCenter(
-                          inputText: StaticText.item,
+                          inputText:     truncateText(product.title ?? '', 5),
                           fontSize: 9,
                           weight: FontWeight.w900,
                           colorName: AppColors.blackColor,
@@ -72,11 +93,12 @@ class _AllItemsState extends State<AllItems> {
                       ],
                     ),
                     customTextNunitoSansCenter(
-                      inputText: StaticText.amount,
+                      inputText: product.price.toString(),
                       fontSize: 10,
                       weight: FontWeight.w900,
                       colorName: AppColors.blueshade400,
                     ),
+                    
                   ],
                 );
               },
@@ -85,5 +107,19 @@ class _AllItemsState extends State<AllItems> {
         ],
       ),
     );
+       } else if (state is AllProductErrorState) {
+        return Center(
+          child: Text(state.productErrorMessage),
+        );
+      } else {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      
+      }
+        }
+  
+      );
+  
   }
 }

@@ -124,14 +124,7 @@ class _PromotionsState extends State<Promotions> {
                     weight: FontWeight.w600,
                     colorName: AppColors.primaryColor),
               ),
-              // Positioned(
-              //     right: getProportionateScreenWidth(20),
-              //     top: getProportionateScreenHeight(50),
-              //     child: Image.asset(
-              //       Assets.burg,
-              //       width: 87,
-              //       height: 70,
-              //     ))
+          
             ],
           ),
         ),

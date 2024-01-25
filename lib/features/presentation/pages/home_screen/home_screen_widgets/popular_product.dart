@@ -10,13 +10,20 @@ import '../../../../widget/custom_text.dart';
 import '../../../logic/product_bloc/product_bloc.dart';
 import '../../../logic/product_bloc/product_event.dart';
 import '../../../logic/product_bloc/product_state.dart';
-import '../../product_details__screen/product_details_widget/description.dart';
+import '../../category_screen/categories_screen.dart';
+import '../../product_details__screen/product_details.dart';
 
 class HomePopularProduct extends StatelessWidget {
   const HomePopularProduct({super.key});
 
   @override
   Widget build(BuildContext context) {
+    String truncateText(String text, int maxLength) {
+      return text.length <= maxLength
+          ? text
+          : '${text.substring(0, maxLength)}...';
+    }
+
     final allProviderBloc = BlocProvider.of<AllProductBloc>(context);
 
     allProviderBloc.add(GetAllProductEvent());
@@ -39,11 +46,23 @@ class HomePopularProduct extends StatelessWidget {
                       fontSize: 20,
                       weight: FontWeight.w700,
                       colorName: AppColors.blackColor),
-                  customTextNunitoSansCenter(
-                      inputText: StaticText.seeAll,
-                      fontSize: 15,
-                      weight: FontWeight.w700,
-                      colorName: AppColors.blueshade400),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CategoryScreen()),
+                      );
+                    },
+                    child: InkWell(
+                      splashColor: AppColors.greyColor,
+                      child: customTextNunitoSansCenter(
+                          inputText: StaticText.seeAll,
+                          fontSize: 15,
+                          weight: FontWeight.w700,
+                          colorName: AppColors.blueshade400),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -68,7 +87,7 @@ class HomePopularProduct extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Description(
+                                  builder: (context) => ProductDetails(
                                     amount: product.price?.toInt() ?? 0,
                                     productName: product.title,
                                     productImage: product.image,
@@ -92,7 +111,8 @@ class HomePopularProduct extends StatelessWidget {
                           Row(
                             children: [
                               customTextNunitoSansCenter(
-                                  inputText: StaticText.item,
+                                  inputText:
+                                      truncateText(product.title ?? '', 5),
                                   fontSize: 9,
                                   weight: FontWeight.w900,
                                   colorName: AppColors.blackColor),
