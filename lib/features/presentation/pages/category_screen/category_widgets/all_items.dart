@@ -16,19 +16,21 @@ class AllItems extends StatefulWidget {
 class _AllItemsState extends State<AllItems> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(height: getProportionateScreenHeight(30)),
-        SingleChildScrollView(
-          child: SizedBox(
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(height: getProportionateScreenHeight(30)),
+          Container(
+            margin: EdgeInsets.only(left: 20),
             height: SizeConfig.screenHeight,
             child: GridView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: getProportionateScreenWidth(13),
                 mainAxisSpacing: getProportionateScreenHeight(9),
               ),
-              scrollDirection: Axis.vertical,
               itemCount: 20,
               itemBuilder: (context, index) {
                 return Column(
@@ -80,8 +82,8 @@ class _AllItemsState extends State<AllItems> {
               },
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

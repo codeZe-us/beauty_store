@@ -5,7 +5,7 @@ import 'package:beauty_store/domain/usecases/get_all_products_use_case.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../domain/usecases/gat_all_categories.dart';
-import '../../domain/usecases/get_single_usecase_product.dart';
+import '../../domain/usecases/get_sorting_usecase.dart';
 
 final sl = GetIt.instance;
 
@@ -22,6 +22,6 @@ class ServiceLocator {
     //! Usecases
     sl.registerLazySingleton(() => GetAllProductsUseCase(sl()));
     sl.registerLazySingleton(() => GetAllCategoriesUseCase(sl()));
-    sl.registerLazySingleton(() => GetSingleProductUseCase(sl()));
+    sl.registerLazySingleton(() => SortingUseCase(sl()));
   }
 }

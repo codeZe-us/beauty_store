@@ -1,17 +1,17 @@
+import 'package:beauty_store/data/models/category_model.dart';
+
 import '../../../../core/utils/request_state.dart';
-import '../../../../domain/entities/categories.dart';
 
 abstract class AllCategoriesState {
   const AllCategoriesState();
 
-  @override
   List<Object> get props => [];
 }
 
 class AllCategoriesInitial extends AllCategoriesState {}
 
 class GetAllCategoriesState extends AllCategoriesState {
-  final List<Category>? categoriesList;
+  final List<CategoryModel>? categoriesList;
   final String categoriesErrorMessage;
   final RequestState categoriesRequestState;
 
@@ -34,7 +34,7 @@ class GetAllCategoriesState extends AllCategoriesState {
 }
 
 class GetAllCategoriesErrorState extends AllCategoriesState {
-  final List<Category>? categoriesList;
+  final List<CategoryModel>? categoriesList;
   final String categoriesErrorMessage;
   final RequestState categoriesRequestState;
 

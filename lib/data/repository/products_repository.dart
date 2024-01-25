@@ -1,21 +1,26 @@
+import 'package:beauty_store/core/errors/exceptions.dart';
+import 'package:beauty_store/core/errors/failure.dart';
+import 'package:beauty_store/data/datasources/product_remote_data_source.dart';
+import 'package:beauty_store/data/models/category_model.dart';
+import 'package:beauty_store/data/models/product_model.dart';
+import 'package:beauty_store/domain/repository/base_products_repository.dart';
 import 'package:dartz/dartz.dart';
-
-import '../../core/errors/exceptions.dart';
-import '../../core/errors/failure.dart';
-import '../../domain/entities/categories.dart';
-import '../../domain/entities/product.dart';
-import '../../domain/repository/base_products_repository.dart';
-import '../datasources/product_remote_data_source.dart';
 
 class ProductsRepository extends BaseProductsRepository {
   final BaseProductRemoteDataSource _baseProductRemoteDataSource;
 
   ProductsRepository(this._baseProductRemoteDataSource);
 
+  List<T> _mapToEntities<T>(
+      List<dynamic> results, T Function(Map<String, dynamic>) fromJson) {
+    return results.map((model) => fromJson(model)).toList();
+  }
+
   @override
-  Future<Either<Failure, List<Product>>> getAllProduct() async {
+  Future<Either<Failure, List<CategoryModel>>> getAllCategories() async {
     try {
-      final results = await _baseProductRemoteDataSource.getAllProducts();
+      final results = await _baseProductRemoteDataSource.getAllCategories();
+
       return Right(results);
     } on ServerException catch (failure) {
       return Left(ServerFailure(message: failure.message));
@@ -23,27 +28,47 @@ class ProductsRepository extends BaseProductsRepository {
   }
 
   @override
-  Future<Either<Failure, List<Category>>> getAllCategories() async {
+  Future<Either<Failure, List<ProductModel>>> sorting({String? sortBy}) async {
     try {
-      final results = await _baseProductRemoteDataSource.getAllCategories();
-      final categories = results
-          .map((categoryModel) => Category(name: categoryModel.name))
-          .toList();
+      final results =
+          await _baseProductRemoteDataSource.sorting(sortBy: sortBy);
 
-      return Right(categories);
+      return Right(results);
     } on ServerException catch (failure) {
       return Left(ServerFailure(message: failure.message));
     }
   }
 
   @override
-  Future<Either<Failure, Product>> getSingleProduct(int productId) async {
+  Future<Either<Failure, List<ProductModel>>> allProducts() async {
     try {
-      final result =
-          await _baseProductRemoteDataSource.getSingleProduct(productId);
-      return Right(result);
+      final results = await _baseProductRemoteDataSource.allProducts();
+
+      return Right(results);
     } on ServerException catch (failure) {
       return Left(ServerFailure(message: failure.message));
     }
   }
+
+  // @override
+  // Future<Either<Failure, List<Cart>>> allCart() async {
+  //   try {
+  //     final results = await _baseProductRemoteDataSource.allCart();
+  //     final orders = _mapToEntities(results, (json) => Cart(
+  //       id: json['id'],
+  //       userId: json['userId'],
+  //       date: DateTime.parse(json['date']),
+  //       products: (json['products'] as List<dynamic>)
+  //           .map((productJson) => ProductQuantity(
+  //             productId: productJson['productId'],
+  //             quantity: productJson['quantity'],
+  //           ))
+  //           .toList(),
+  //     ));
+
+  //     return Right(orders);
+  //   } on ServerException catch (failure) {
+  //     return Left(ServerFailure(message: failure.message));
+  //   }
+  // }
 }

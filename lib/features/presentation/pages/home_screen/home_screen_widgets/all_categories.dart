@@ -1,30 +1,28 @@
+import 'package:beauty_store/data/models/category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/constant/color.dart';
 import '../../../../../core/constant/dimensions.dart';
 import '../../../../../core/constant/strings.dart';
-import '../../../../../domain/entities/categories.dart';
 import '../../../../widget/custom_text.dart';
 import '../../../logic/category_bloc/category_bloc.dart';
 import '../../../logic/category_bloc/category_event.dart';
 import '../../../logic/category_bloc/category_state.dart';
-
 
 class AllCategoriesHome extends StatelessWidget {
   const AllCategoriesHome({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final allCategoriesBloc = BlocProvider.of<AllCategoriesBloc>(context); // Use the correct bloc
+    final allCategoriesBloc = BlocProvider.of<AllCategoriesBloc>(context);
 
-    // Load categories when the screen is built
-    allCategoriesBloc.add(GetAllCategoriesEvent()); // Use the correct event
+    allCategoriesBloc.add(GetAllCategoriesEvent());
 
     return BlocBuilder<AllCategoriesBloc, AllCategoriesState>(
       builder: (context, state) {
         if (state is GetAllCategoriesState) {
-          List<Category>? categories = state.categoriesList;
+          List<CategoryModel>? categories = state.categoriesList;
 
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +59,7 @@ class AllCategoriesHome extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: categories?.length ?? 0,
                     itemBuilder: (context, index) {
-                      Category category = categories![index];
+                      CategoryModel category = categories![index];
 
                       return Padding(
                         padding: EdgeInsets.only(
