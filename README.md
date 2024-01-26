@@ -1,30 +1,34 @@
 # Beauty Store
 
 #Table of Contents
-Introduction
-Features
-Architecture Overview
-Folder Structure
-Prerequisites
-Getting Started
-Installation
-Running the App
+- Introduction
+- Features
+- Architecture Overview
+- Folder Structure
+- Prerequisites
+- Getting Started
+- Installation
+- Running the App
 
 
 # Introduction
 An ecommerce application leveraging fakestore API.
 
 # Features
-Cart Scren, 
-Home Screen, 
-Details screen, 
-prodile screen.
+- Home Screen
+
+- Cart Screen
+
+- Details Screen
+
+- Profile Screen
 
 # Architecture Overview
 Clean Architecture and Bloc Pattern.
 
 # Folder Structure
-Clean Architecture
+- Clean Architecture
+- Four layers of Architecture.
 
 # Prerequisites
 Flutter.
