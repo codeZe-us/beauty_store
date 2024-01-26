@@ -34,9 +34,7 @@ Download Flutter SDK.
 
 
 # Command for installing dependencies
-flutter pub get
-Running the App
-Explain how to run the app locally. Include any necessary commands or configurations.
+flutter pub get.
 
 
 # Command for running the app
