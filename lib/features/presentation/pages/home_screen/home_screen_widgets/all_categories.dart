@@ -8,6 +8,7 @@ import '../../../../../core/constant/color.dart';
 import '../../../../../core/constant/dimensions.dart';
 import '../../../../../core/constant/strings.dart';
 import '../../../../widget/custom_text.dart';
+import '../../../../widget/page_transition.dart';
 import '../../../logic/category_bloc/category_bloc.dart';
 import '../../../logic/category_bloc/category_event.dart';
 import '../../../logic/category_bloc/category_state.dart';
@@ -46,11 +47,7 @@ class AllCategoriesHome extends StatelessWidget {
                     GestureDetector(
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const CategoryScreen()),
-                          );
+                           Navigator.push(context, SizeTransition2(const CategoryScreen()));
                         },
                         splashColor: AppColors.greyColor,
                         child: customTextNunitoSansCenter(
