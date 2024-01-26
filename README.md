@@ -44,5 +44,8 @@ flutter pub get.
 # Command for running the app
 flutter run
 
-[Download Video](https://github.com/codeZe-us/beauty_store/blob/main/screenRecord/store.mp4)
+## Video
+
+https://github.com/codeZe-us/beauty_store/assets/90171256/fd14deca-1b6c-48c0-9769-857782c22459
+
 
