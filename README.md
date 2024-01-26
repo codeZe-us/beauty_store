@@ -42,4 +42,5 @@ Explain how to run the app locally. Include any necessary commands or configurat
 # Command for running the app
 flutter run
 
+[Download Video](https://github.com/codeZe-us/beauty_store/blob/main/screenRecord/store.mp4)
 
